@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: crawler
+  resources:
+    static-locations: classpath:/static/
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL5Dialect
+  jackson:
+    serialization:
+      indent_output: false
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/crawler?characterEncoding=utf8
+    username: root
+    password: fengxiang
+
+crawler:
+  path: classpath:/static/
+
+server:
+  port: 9081
+eureka:
+  client:
+    serviceUrl:
+       defaultZone: http://localhost:8080/eureka/
